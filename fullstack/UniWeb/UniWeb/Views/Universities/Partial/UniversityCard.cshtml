@@ -1,0 +1,79 @@
+<style>
+    .car__container{
+        max-width: 350px;
+        height: 350px;
+        margin-right: 10px;
+        border-radius: 8px;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("@Url.Content("~/public/images/Frame.png")");
+        box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -webkit-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -moz-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+    }
+    .container__content{
+        position: absolute;
+        bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        filter: none !important;
+        border-radius: 10px;
+        
+    }
+    .container__content p{
+        color: lightgray;
+    }
+    
+    
+    
+    .container__content h5{
+        color: white;
+    }
+    
+    .additional__information__container{
+        width: 100%;    
+    }
+    
+    .programs__block{
+        margin-top: 20px;
+        border-radius: 8px;
+        max-width: 150px;
+        background: white;
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+
+
+
+
+       
+    <div class="cards__container">
+        <div class="car__container">
+            <a asp-action="Details" asp-controller="Universities">
+                <div class="container__content">
+                    <div class="additional__information__container">
+                        <div class="programs__block">
+                            <i>4 программы</i>
+                        </div>
+                    </div>
+
+                    <div class="header__content__container">
+                        <p class="mb-2">Государственный / Бюджет</p>
+                        <h5>Московский государственный университет (МГУ)</h5>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+    </div>
+

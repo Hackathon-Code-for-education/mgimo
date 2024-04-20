@@ -16,21 +16,18 @@ public class HomeController : ControllerBase
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
+        
+        
     }
 
     [HttpGet]
     public IActionResult Get(string? data)
     {
-        return Ok(new DemoModel()
+        return Ok(new 
         {
             Username = " he;dskald;",
             Name = "sjdklasda"
         }); 
     }
-
-    [HttpPost]
-    public IActionResult Post([FromForm]DemoModel model)
-    {
-        return Ok("Ты плохой человек");
-    }
+    
 }

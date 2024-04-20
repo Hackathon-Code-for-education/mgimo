@@ -1,0 +1,294 @@
+
+
+@{
+    ViewBag.Title = "Московский государственный университет";
+    Layout = "_Layout";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+/>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"
+></script>
+
+<div class="container">
+  
+  <h2>Московский государственный университет (МГУ)</h2>
+
+  <div id="panorama"></div>
+  <script>
+    pannellum.viewer("panorama", {
+      default: {
+        firstScene: "class216",
+        author: "Название ВУЗа",
+        sceneFadeDuration: 1000,
+      },
+      scenes: {
+        class216: {
+          title: "Кабинет 216",
+          hfov: 110,
+          pitch: -3,
+          yaw: 117,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/1.jpg")",
+          hotSpots: [
+            {
+              pitch: -4,
+              yaw: 132.9,
+              type: "scene",
+              text: "Столовая",
+              sceneId: "canteen",
+            },
+          ],
+        },
+        room: {
+          title: "Комната общежития",
+          hfov: 110,
+          pitch: -3,
+          yaw: 117,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/2.jpg")",
+          hotSpots: [
+            {
+              pitch: -4,
+              yaw: 160,
+              type: "scene",
+              text: "Общежитие",
+              sceneId: "dormitory",
+            },
+          ],
+        },
+        yard: {
+          title: "Двор",
+          hfov: 110,
+          pitch: -3,
+          yaw: 117,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/3.jpg")",
+          hotSpots: [
+            {
+              pitch: -4,
+              yaw: 15,
+              type: "scene",
+              text: "Общежитие",
+              sceneId: "dormitory",
+            },
+          ],
+        },
+        dormitory: {
+          title: "Общежитие",
+          hfov: 110,
+          pitch: -3,
+          yaw: 117,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/4.jpg")",
+          hotSpots: [
+            {
+              pitch: -4,
+              yaw: 180,
+              type: "scene",
+              text: "Комната",
+              sceneId: "room",
+            },
+            {
+              pitch: -4,
+              yaw: 60,
+              type: "scene",
+              text: "Кабинет 215",
+              sceneId: "class215",
+            },
+            {
+              pitch: -4,
+              yaw: -60,
+              type: "scene",
+              text: "Двор",
+              sceneId: "yard",
+            },
+          ],
+        },
+        class215: {
+          title: "Кабинет 215",
+          hfov: 110,
+          pitch: -3,
+          yaw: 117,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/5.jpg")",
+          hotSpots: [
+            {
+              pitch: -4,
+              yaw: 90,
+              type: "scene",
+              text: "Столовая",
+              sceneId: "canteen",
+            },
+            {
+              pitch: -4,
+              yaw: 265,
+              type: "scene",
+              text: "Общежитие",
+              sceneId: "dormitory",
+            },
+          ],
+        },
+        canteen: {
+          title: "Столовая",
+          hfov: 110,
+          yaw: 5,
+          type: "equirectangular",
+          panorama: "@Url.Content("~/public/panorama/6.jpg")",
+          hotSpots: [
+            {
+              pitch: -0.6,
+              yaw: 160,
+              type: "scene",
+              text: "Кабинет 216",
+              sceneId: "class216",
+              targetYaw: -23,
+              targetPitch: 2,
+            },
+            {
+              pitch: -6,
+              yaw: -110,
+              type: "scene",
+              text: "Кабинет 215",
+              sceneId: "class215",
+              targetYaw: -23,
+              targetPitch: 2,
+            },
+          ],
+        },
+      },
+    });
+  </script>
+</div>
+
+
+
+
+<style lang="scss" scoped>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira sans", sans-serif;
+  }
+
+  .main-block {
+    display: flex;
+    justify-content: end;
+    padding-right: 2vw;
+  }
+
+  #panorama {
+    width: 600px;
+    height: 400px;
+  }
+
+  .pers-cabinet {
+    cursor: pointer;
+  }
+
+  nav {
+    padding-left: 2vw;
+    gap: 2vw;
+    display: flex;
+    justify-content: start;
+  }
+
+  .header-hendler {
+    padding-top: 1vw;
+    padding-right: 2vw;
+    display: flex;
+    justify-content: end;
+  }
+
+  header {
+    display: flex;
+    justify-content: end;
+    width: 70%;
+    align-items: center;
+    gap: 2vw;
+
+    a {
+      font-size: 1.2vw;
+    }
+  }
+  .table-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .table-row {
+    padding: 1vw;
+    display: flex;
+    width: 100%;
+  }
+
+  .table-cell {
+    padding: 1vw;
+    flex-basis: 33.33%;
+    text-align: center;
+  }
+
+  .main-part {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+  }
+
+  .text-block {
+    align-items: start;
+  }
+
+  .name {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2vw;
+  }
+
+  .desc {
+    text-align: left;
+    font-size: 1.2vw;
+  }
+
+  .menu-link {
+    text-decoration: none;
+    color: blue;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .menu-link.underline-active {
+    text-decoration: underline;
+  }
+
+  a {
+    font-size: 1.2vw;
+    font-weight: bold;
+  }
+
+  h1 {
+    margin-top: 1vw;
+    margin-left: 2vw;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+  }
+
+  button {
+    margin-top: 1vw;
+    font-family: "Fira sans", sans-serif;
+    font-size: 1.3vw;
+    background-color: #6558ff;
+    color: white;
+    border-radius: 2vw;
+    padding: 0.5vw;
+    cursor: pointer;
+    width: 100%;
+  }
+</style>

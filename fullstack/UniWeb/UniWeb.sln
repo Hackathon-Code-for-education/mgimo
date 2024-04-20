@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniWeb", "UniWeb\UniWeb.csproj", "{55A68ABB-E1FD-4B52-B439-04CDC95470B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniWeb.Domain", "UniWeb.Domain\UniWeb.Domain.csproj", "{DF637512-30F8-472F-B6A0-BE0F7290F698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniWeb.Core", "UniWeb.Core\UniWeb.Core.csproj", "{6F9F4066-BD22-4E12-9516-AB043392D36D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55A68ABB-E1FD-4B52-B439-04CDC95470B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A68ABB-E1FD-4B52-B439-04CDC95470B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A68ABB-E1FD-4B52-B439-04CDC95470B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A68ABB-E1FD-4B52-B439-04CDC95470B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF637512-30F8-472F-B6A0-BE0F7290F698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF637512-30F8-472F-B6A0-BE0F7290F698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF637512-30F8-472F-B6A0-BE0F7290F698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF637512-30F8-472F-B6A0-BE0F7290F698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9F4066-BD22-4E12-9516-AB043392D36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9F4066-BD22-4E12-9516-AB043392D36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9F4066-BD22-4E12-9516-AB043392D36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9F4066-BD22-4E12-9516-AB043392D36D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

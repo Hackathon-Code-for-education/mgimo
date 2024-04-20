@@ -1,0 +1,14 @@
+@{
+    ViewBag.Title = "Университеты";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2>Университеты России</h2>
+
+    <div class="page-separator">
+        <div class="page-separator__text">ТОП 10 УНИВЕРСИТЕТОВ</div>
+    </div>
+    @await Html.PartialAsync("Partial/UniversityCard");
+</div>
+
