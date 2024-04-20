@@ -2,7 +2,6 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using UniWeb.Core.Helpers;
 using UniWeb.Database;
 using UniWeb.Entities.WebModels.Applicant;
@@ -91,6 +90,28 @@ public class ApplicantController : Controller
 
     public IActionResult Register()
     {
+        return View();
+    }
+
+    #endregion
+
+    #region Forgot Password
+
+    public IActionResult ForgotPassword()
+    {
+        return View();
+    }    
+
+    #endregion
+
+    #region About User
+
+    public IActionResult About()
+    {
+        if (User.Identity.IsAuthenticated)
+        {
+            
+        }
         return View();
     }
 

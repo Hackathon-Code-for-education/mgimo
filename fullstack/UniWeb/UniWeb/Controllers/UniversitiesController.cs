@@ -15,5 +15,9 @@ public class UniversitiesController : Controller
     {
         return View();
     }
-    
+
+    public IActionResult Details(int id)
+    {
+        return View();
+    }
 }
