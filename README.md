@@ -3,7 +3,7 @@
 ## Описание проекта
 Проект хакатона "Код образования" от команды ODIN из МГИМО МИД РОССИИ.
 
-Проект состоит из двух частей: backend и frontend. Backend написан на ASP.NET MVC Web API c реляционной базой данных MySQL. Frontend написан на Vue.js
+Проект fullstack написан на ASP.NET MVC Web API c реляционной базой данных MySQL.
 
 
 ## Сборка Backend сервера
