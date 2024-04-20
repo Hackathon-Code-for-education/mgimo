@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "ODHnuv6N/knV/2lOOb30vbcGML1fJy+16QZrul6qrJTm5V+Vk+7gS1Qd47H3zxsUXzRPEdwF2c5i6i1Yg8qKHQ==",
+  "success": true,
+  "projectFilePath": "/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/Backend.API.csproj",
+  "expectedPackageFiles": [
+    "/Users/siquell/.nuget/packages/microsoft.aspnetcore.openapi/7.0.18/microsoft.aspnetcore.openapi.7.0.18.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.18/microsoft.netcore.app.runtime.linux-x64.7.0.18.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.18/microsoft.aspnetcore.app.runtime.linux-x64.7.0.18.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.18/microsoft.netcore.app.host.linux-x64.7.0.18.nupkg.sha512"
+  ],
+  "logs": []
+}
