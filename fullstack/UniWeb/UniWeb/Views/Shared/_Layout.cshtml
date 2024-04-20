@@ -104,7 +104,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a asp-action="Register" asp-controller="Applicant"
+                            <a asp-action="Login" asp-controller="Applicant"
                                class="btn btn-outline-dark">Зарегистрироваться</a>
                         </li>
                     </ul>
@@ -113,7 +113,7 @@
                 {
                     <ul class="nav navbar-nav ml-auto mr-0">
                         <li class="nav-item">
-                            <a asp-action="Login" asp-controller="Applicant"
+                            <a asp-action="About" asp-controller="Applicant"
                                class="nav-link">@User.FindFirst(ClaimTypes.Email)?.Value</a>
                         </li>
 
