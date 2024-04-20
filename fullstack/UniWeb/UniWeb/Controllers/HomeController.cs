@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using UniWeb.Models;
 
 namespace UniWeb.Controllers;
 
