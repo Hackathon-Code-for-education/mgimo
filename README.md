@@ -11,7 +11,7 @@
 ВНИМАНИЕ: Сервер Backend в данный момент запущен на домене:
 
    ```
-   api.mgimoapp.ru/swagger/index.html
+   https://api.mgimoapp.ru/swagger/index.html
    ```
 Туда можно отправлять запросы для тестирования
 
