@@ -38,7 +38,7 @@
 
 3. Запустить сервер, введя команду:
    ```
-   cd ./backend/Backend/Backend.API && \
+   cd ./fullstack/UniWeb/UniWeb
    dotnet run
    ```
 
