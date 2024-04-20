@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="ru_project_title"><![CDATA[New Project]]></data>
+
+
+  <data name="ru_panogroup68_title"><![CDATA[3D тур]]></data>
+
+  <data name="ru_pano62_title"><![CDATA[коридор]]></data>
+  <data name="ru_spotpolygon439_tooltip"><![CDATA[кабинет 216]]></data>
+  <data name="ru_spotpolygon441_tooltip"><![CDATA[кабинет 215]]></data>
+  <data name="ru_spotpolygon442_tooltip"><![CDATA[столовая]]></data>
+  <data name="ru_spotpolygon443_tooltip"><![CDATA[общежитие]]></data>
+  <data name="ru_pano59_title"><![CDATA[кабинет 215]]></data>
+  <data name="ru_spotpolygon444_tooltip"><![CDATA[коридор]]></data>
+  <data name="ru_pano60_title"><![CDATA[кабинет 216]]></data>
+  <data name="ru_spotpolygon445_tooltip"><![CDATA[коридор]]></data>
+  <data name="ru_pano64_title"><![CDATA[столовая]]></data>
+  <data name="ru_spotpolygon446_tooltip"><![CDATA[коридор]]></data>
+  <data name="ru_pano63_title"><![CDATA[общежитие]]></data>
+  <data name="ru_spotpolygon447_tooltip"><![CDATA[коридор]]></data>
+  <data name="ru_spotpolygon448_tooltip"><![CDATA[комната общежития]]></data>
+  <data name="ru_pano61_title"><![CDATA[комната общежития]]></data>
+  <data name="ru_spotpolygon449_tooltip"><![CDATA[общежитие]]></data>
+
+
+
+
+
+
+  <data name="ru_contextmenuopenFsLabel"><![CDATA[Enter Fullscreen]]></data>
+  <data name="ru_contextmenucloseFsLabel"><![CDATA[Exit Fullscreen]]></data>
+  <data name="ru_contextmenunormallabel"><![CDATA[Normal View]]></data>
+  <data name="ru_contextmenuarchitecturallabel"><![CDATA[Architectural View]]></data>
+  <data name="ru_contextmenulittleplanetlabel"><![CDATA[Little Planet View]]></data>
+
+
+  <data name="ru_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="ru_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="ru_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="ru_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="ru_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="ru_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="ru_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="ru_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="ru_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="ru_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="ru_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="ru_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="ru_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="ru_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="ru_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="ru_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="ru_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="ru_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="ru_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="ru_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="ru_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="ru_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="ru_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="ru_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="ru_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="ru_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="ru_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="ru_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
