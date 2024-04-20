@@ -1,4 +1,4 @@
-namespace Backend.Domain.WebModels;
+namespace Backend.Domain.WebModels.Applicant;
 
 public class ApplicantLogin
 {

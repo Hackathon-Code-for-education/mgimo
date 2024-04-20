@@ -23,20 +23,11 @@ public class HomeController : ControllerBase
     [HttpGet]
     public IActionResult Get(string? data)
     {
-        return Ok(new DemoModel()
+        return Ok(new 
         {
             Username = " he;dskald;",
             Name = "sjdklasda"
         }); 
     }
-
-    [HttpPost]
-    public IActionResult Post([FromForm]DemoModel model)
-    {
-        return Ok(new
-        {
-            UserName = "hsdkasda",
-            Name = "sjdalsdjla"
-        });
-    }
+    
 }
