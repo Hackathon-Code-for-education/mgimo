@@ -93,6 +93,7 @@ public class ApplicantController : ControllerBase
             ServerTime = now,
             Login = newUser.Login,
             Role = "Applicant",
+            Lifetime = AuthOptions.LIFETIME,
             Token = new JwtSecurityTokenHandler().WriteToken(jwt)
         };
 
@@ -140,13 +141,14 @@ public class ApplicantController : ControllerBase
         {
             ServerTime = now,
             Login = user.Login,
-            Role = "Applicant",
+            Role = user.Role,
+            Lifetime = AuthOptions.LIFETIME,
             Token = new JwtSecurityTokenHandler().WriteToken(jwt)
         });
     } 
     
-    [HttpGet]
     [Authorize]
+    [HttpGet]
     [ActionName("Me")]
     public async Task<IActionResult> GetMe()
     {

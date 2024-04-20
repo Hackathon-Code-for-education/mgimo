@@ -361,3 +361,11 @@
 /Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/System.Windows.Extensions.dll
 /Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Backend.Domain.dll
 /Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Backend.Domain.pdb
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.Abstractions.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.Logging.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.Protocols.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/Microsoft.IdentityModel.Tokens.dll
+/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/bin/Release/net7.0/linux-x64/System.IdentityModel.Tokens.Jwt.dll

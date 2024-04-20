@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/BmSIf14HkoSX+X1ehllaHrIa3sYX5njbK984sOgNNG70Ny8OLI4Xs3ZyHKt79g7itRSPOhQGFyxdBgcNP7o6Q==",
+  "dgSpecHash": "9GFTc8JlIh+0wYggAftG1fNIvLp20UmPRiLO5KlBqKQ8J0JyiGclQOxqpKBi03w+f4HMcahy/H/S2C/dmk3lSA==",
   "success": true,
   "projectFilePath": "/Users/siquell/Documents/Проекты/Hacathon/mgimo/backend/Backend/Backend.API/Backend.API.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,10 @@
     "/Users/siquell/.nuget/packages/microsoft.win32.systemevents/7.0.0/microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/mysqlconnector/2.2.5/mysqlconnector.2.2.5.nupkg.sha512",
     "/Users/siquell/.nuget/packages/pomelo.entityframeworkcore.mysql/7.0.0/pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/runtime.any.system.runtime/4.3.0/runtime.any.system.runtime.4.3.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/runtime.any.system.text.encoding/4.3.0/runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/runtime.unix.system.private.uri/4.3.0/runtime.unix.system.private.uri.4.3.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
@@ -41,6 +45,7 @@
     "/Users/siquell/.nuget/packages/system.diagnostics.eventlog/7.0.0/system.diagnostics.eventlog.7.0.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.drawing.common/7.0.0/system.drawing.common.7.0.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.identitymodel.tokens.jwt/6.35.0/system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/system.private.uri/4.3.0/system.private.uri.4.3.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.security.cryptography.protecteddata/7.0.0/system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
@@ -48,7 +53,10 @@
     "/Users/siquell/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.text.encodings.web/4.7.2/system.text.encodings.web.4.7.2.nupkg.sha512",
     "/Users/siquell/.nuget/packages/system.text.json/4.7.2/system.text.json.4.7.2.nupkg.sha512",
-    "/Users/siquell/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512"
+    "/Users/siquell/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.18/microsoft.netcore.app.runtime.linux-x64.7.0.18.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.18/microsoft.aspnetcore.app.runtime.linux-x64.7.0.18.nupkg.sha512",
+    "/Users/siquell/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.18/microsoft.netcore.app.host.linux-x64.7.0.18.nupkg.sha512"
   ],
   "logs": []
 }

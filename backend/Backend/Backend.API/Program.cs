@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -23,12 +24,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             // укзывает, будет ли валидироваться издатель при валидации токена
             ValidateIssuer = true,
             // строка, представляющая издателя
-            ValidIssuer = "MyUniversity",
+            ValidIssuer = AuthOptions.ISSUER,
  
             // будет ли валидироваться потребитель токена
             ValidateAudience = true,
             // установка потребителя токена
-            ValidAudience = "Client",
+            ValidAudience = AuthOptions.AUDIENCE,
             // будет ли валидироваться время существования
             ValidateLifetime = true,
  
@@ -101,7 +102,9 @@ app.UseSwaggerUI();
 app.UseCors(options => options
     .AllowAnyOrigin()
     .AllowAnyMethod()
-    .AllowAnyHeader());
+    .AllowAnyHeader()
+);
+
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
@@ -109,11 +112,15 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 
 
-app.UseHttpsRedirection();
 
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
-app.MapControllers();
+
 
 app.Run();

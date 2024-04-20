@@ -1,6 +1,5 @@
 using Backend.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
-using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 
 namespace Backend.API.Database;
