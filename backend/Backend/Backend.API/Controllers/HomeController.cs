@@ -16,6 +16,8 @@ public class HomeController : ControllerBase
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
+        
+        
     }
 
     [HttpGet]
@@ -31,6 +33,10 @@ public class HomeController : ControllerBase
     [HttpPost]
     public IActionResult Post([FromForm]DemoModel model)
     {
-        return Ok("Ты плохой человек");
+        return Ok(new
+        {
+            UserName = "hsdkasda",
+            Name = "sjdalsdjla"
+        });
     }
 }
