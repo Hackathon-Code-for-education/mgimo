@@ -31,6 +31,10 @@
    git clone https://github.com/Hackathon-Code-for-education/mgimo.git
    ```
 
+Для запуска необходимо установить Dotnet SDK 7-ой версии. Вы этом можете сделать по данноый ссылке:
+https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+
+
 2. Установить DotNet SDK , выполнив команду:
    ```
    sudo apt-get update && \
