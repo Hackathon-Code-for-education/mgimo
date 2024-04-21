@@ -1,0 +1,11 @@
+@model String
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<div class="container text-center mt-lg-5">
+    <h4>@Model</h4>
+    <a asp-action="Index" class="btn btn-accent-pickled-bluewood mt-32pt" asp-controller="Home">Вернуться на главную</a>
+</div>

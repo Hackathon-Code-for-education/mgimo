@@ -146,7 +146,6 @@ public class ApplicantController : Controller
 
             // Отправялем пользователя на главную страницу
             return RedirectToAction("Index", "Home");
-
         }
         
         ModelState.AddModelError(string.Empty, "Проверьте правильность ввода данных");

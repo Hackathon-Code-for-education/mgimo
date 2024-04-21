@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
     </ItemGroup>
 
@@ -16,8 +17,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Controllers\Representer\" />
       <Folder Include="Models\" />
+      <Folder Include="wwwroot\icons\" />
       <Folder Include="wwwroot\public\panorama\" />
+      <Folder Include="wwwroot\unistorage\3\" />
     </ItemGroup>
 
 </Project>

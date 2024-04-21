@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using UniWeb.Entities.Entity.Entity;
 using UniWeb.Entities.Entity.Entity.University;
 
@@ -27,7 +28,22 @@ public class DatabaseController : DbContext
     /// Все университеты системы
     /// </summary>
     public DbSet<University> Universities { get; set; }
+    
+    /// <summary>
+    /// Все пользователи системы, которые имеют право что-либо делать
+    /// </summary>
+    public DbSet<User> Users { get; set; }
 
+    /// <summary>
+    /// Все зарегистрированные студентый системы
+    /// </summary>
+    public DbSet<Student> Students { get; set; }
+
+    /// <summary>
+    /// Все отзывы об университетах
+    /// </summary>
+    public DbSet<UniversityReview> UniversityReviews { get; set; }
+    
     #endregion
     
     #region Constructor
@@ -65,5 +81,20 @@ public class DatabaseController : DbContext
         // );
     }
 
+    /// <summary>
+    /// Добавление настроек модуля
+    /// </summary>
+    /// <param name="modelBuilder"></param>
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Applicant>(x =>
+        {
+            x.HasKey(y => y.Id);
+            x.Property(y => y.FavoriteUniversities).HasConversion(x => JsonConvert.SerializeObject(x), // to converter
+                x => JsonConvert.DeserializeObject<List<int>>(x));
+        });
+        
+    }
+    
     #endregion
 }

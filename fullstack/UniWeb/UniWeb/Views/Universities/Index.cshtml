@@ -1,7 +1,75 @@
+@using System.Security.Claims
+@using Microsoft.EntityFrameworkCore
+@using UniWeb.Database
 @{
     ViewBag.Title = "Университеты";
     Layout = "_Layout";
 }
+
+<style>
+    .car__container{
+
+        height: 350px;
+        margin-right: 10px;
+        border-radius: 8px;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -webkit-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -moz-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+    }
+
+    .cards__container{
+        position: relative;
+        width: 350px;
+    }
+
+    .card__row{
+        display: flex;
+    }
+    .container__content{
+        position: absolute;
+        bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        filter: none !important;
+        border-radius: 10px;
+
+    }
+    .container__content p{
+        color: lightgray;
+    }
+
+
+    .container__content h5{
+        color: white;
+    }
+
+    .additional__information__container{
+        width: 100%;
+    }
+
+    .programs__block{
+        margin-top: 20px;
+        border-radius: 8px;
+        max-width: 150px;
+        background: white;
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+</style>
+
 
 <div class="container mt-4">
     <h2>Университеты России</h2>
@@ -9,6 +77,60 @@
     <div class="page-separator">
         <div class="page-separator__text">ТОП 10 УНИВЕРСИТЕТОВ</div>
     </div>
-    @await Html.PartialAsync("Partial/UniversityCard");
+
+    <div class="container">
+        <div class="row row-cols-3">
+
+            @{
+            foreach (var uni in DatabaseController.GetInstance().Universities.ToList())
+            {
+                @await Html.PartialAsync("Partial/UniversityCard", uni)
+
+            }
+            }
+        </div>
+    </div>
+    
+    
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
+            if (role != "Student" && role != "Representative")
+            {
+                <div class="mb-4 mt-5">
+                    <div class="container">
+                        <div class="page-headline text-center ">
+                            <h2>Мои университеты ♥</h2>
+                            <p class="lead measure-lead mx-auto text-70">Отмечайте понравившиеся университеты и следите за новостями!</p>
+                        </div>
+                        <div class="">
+                            <div class="row row-cols-3">
+                                @{
+                                    var id = int.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
+                                    var user = DatabaseController.GetInstance().Applicants.FirstOrDefault(x => x.Id == id);
+                                    if (user != null)
+                                    {
+                                    
+                                        if (user.FavoriteUniversities != null && user.FavoriteUniversities.Count != 0)
+                                        {
+                                            foreach (var ids in user.FavoriteUniversities)
+                                            {
+                                                var uni = DatabaseController.GetInstance().Universities.FirstOrDefault(x => x.Id == ids);
+                                                @await Html.PartialAsync("Partial/UniversityCard", uni)
+                                            }  
+                                        }
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            }
+            
+        }
+        
+    }
+    
 </div>
 

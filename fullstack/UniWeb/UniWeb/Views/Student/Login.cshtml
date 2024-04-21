@@ -1,0 +1,74 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model UniWeb.Entities.WebModels.Student.LoginStudentViewModel
+
+@{
+    ViewBag.Title = "Войти в систему";
+    Layout = "_Layout";
+}
+
+
+<div class="pt-32pt pt-sm-64pt pb-32pt">
+    
+    <div class="page__container">
+        <h1 class="text-center mb-4">Я - студент Российского университета</h1>
+
+        <div class="container">
+            <style>
+                .container__buttons{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+            </style>
+
+            <div class="container__buttons mb-4">
+                <a asp-action="Login" asp-controller="Applicant" class="btn btn-outline-primary mr-4">Я - абитуриент!</a>
+                <a asp-action="Register" asp-controller="Student" class="btn btn-outline-primary">Я - представитель ВУЗа!</a>
+            </div>
+        </div>
+        <form asp-action="Login" asp-controller="Student" method="post"
+              class="col-md-5 p-0 mx-auto">
+            <div class="form-group">
+                <label class="form-label"
+                       for="email">Почта</label>
+                <input id="email"
+                       type="text"
+                       class="form-control"
+                       asp-for="Email"
+                       placeholder="beststudent@me.ru">
+            </div>
+            <div class="form-group">
+                <label class="form-label"
+                       for="password">Супер секретный пароль</label>
+                <input id="password"
+                       type="password"
+                       asp-for="Password"
+                       class="form-control"
+                       placeholder="qwerty123">
+                <p class="text-right">
+                    <a asp-action="ForgotPassword" asp-controller="Applicant"
+                       class="small">Забыли пароль</a></p>
+            </div>
+            <div asp-validation-summary="ModelOnly" style="color: red"></div>
+            <div class="text-center">
+                <button class="btn btn-primary">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="page-separator justify-content-center m-0">
+    
+    <div class="page-separator__text">Хочу войти с помощью</div>
+</div>
+<div class="bg-body pt-32pt pb-32pt pb-md-64pt text-center">
+    
+    <div class="container page__container">
+        <a href="ya.ru"
+           class="btn btn-secondary btn-block-xs">Yandex</a>
+        <a href="vk.com"
+           class="btn btn-secondary btn-block-xs">VK</a>
+        <a href="mail.ru"
+           class="btn btn-secondary btn-block-xs">Mail.ru</a>
+    </div>
+</div>

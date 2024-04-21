@@ -17,9 +17,17 @@ public class Applicant
     /// </summary>
     public string? Password { get; set; }
     
+    /// <summary>
+    /// Адрес электронной почты
+    /// </summary>
     public string? Email { get; set; }
     
+    /// <summary>
+    /// Номер телефона абитуриента
+    /// </summary>
     public string? Phone { get; set; }
     
     public string? Role { get; set; }
+
+    public List<int>? FavoriteUniversities { get; set; } = new List<int>();
 }
