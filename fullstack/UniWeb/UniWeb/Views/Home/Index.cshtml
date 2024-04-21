@@ -1,6 +1,76 @@
-﻿@{
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Server.Kestrel.Core
+@using UniWeb.Database
+@using UniWeb.Entities.Entity.Entity
+@{
     ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
+
+<style>
+    .car__container{
+
+        height: 350px;
+        margin-right: 10px;
+        border-radius: 8px;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -webkit-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+        -moz-box-shadow: 10px 10px 50px -1px rgba(0,0,0,0.18);
+    }
+
+    .cards__container{
+        position: relative;
+        width: 350px;
+    }
+
+    .card__row{
+        display: flex;
+    }
+    .container__content{
+        position: absolute;
+        bottom: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        filter: none !important;
+        border-radius: 10px;
+
+    }
+    .container__content p{
+        color: lightgray;
+    }
+
+
+    .container__content h5{
+        color: white;
+    }
+
+    .additional__information__container{
+        width: 100%;
+    }
+
+    .programs__block{
+        margin-top: 20px;
+        border-radius: 8px;
+        max-width: 150px;
+        background: white;
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+</style>
 
 <div class="mdk-box mdk-box--bg-primary bg-dark js-mdk-box mb-0"
      data-effects="parallax-background blend-background">
@@ -28,7 +98,7 @@
         <div class="row align-items-center">
             <div class="d-flex col-md align-items-center border-bottom border-md-0 mb-16pt mb-md-0 pb-16pt pb-md-0">
                 <div class="rounded-circle bg-primary w-64 h-64 d-inline-flex align-items-center justify-content-center mr-16pt">
-                    <span class="fa-solid fa-building-columns"></span>
+                    <span class="fa-solid fa-building-columns fa-xl" style="color: white"></span>
                 </div>
                 <div class="flex">
                     <div class="card-title mb-4pt">10 ВУЗов</div>
@@ -37,7 +107,7 @@
             </div>
             <div class="d-flex col-md align-items-center border-bottom border-md-0 mb-16pt mb-md-0 pb-16pt pb-md-0">
                 <div class="rounded-circle bg-primary w-64 h-64 d-inline-flex align-items-center justify-content-center mr-16pt">
-                    <span class="fa-solid fa-users"></span>
+                    <span class="fa-solid fa-users fa-xl" style="color: white"></span>
                 </div>
                 <div class="flex">
                     <div class="card-title mb-4pt">Общение со студентами</div>
@@ -46,7 +116,7 @@
             </div>
             <div class="d-flex col-md align-items-center">
                 <div class="rounded-circle bg-primary w-64 h-64 d-inline-flex align-items-center justify-content-center mr-16pt">
-                    <span class="fa-brands fa-unity"></span>
+                    <span class="fa-brands fa-unity fa-xl" style="color: white"></span>
                 </div>
                 <div class="flex">
                     <div class="card-title mb-4pt">3D тур</div>
@@ -64,7 +134,19 @@
             <div class="page-separator__text">Топовые университеты</div>
         </div>
         
+    </div>
+    <div class="container">
+        <div class="row row-cols-3">
+
+            @{
+            foreach (var uni in DatabaseController.GetInstance().Universities.ToList())
+            {
+            @await Html.PartialAsync("Partial/HomeUniversityCard", uni)
+
+            }
+            }
         </div>
+    </div>
 
 </div>
 
@@ -73,10 +155,42 @@
 
 <div class="page-section">
     <div class="container page__container">
-        <div class="page-headline text-center mb-4">
-            <h2>Мои университеты ♥</h2>
+        <div class="page-headline text-center ">
+            <h2>Мои университеты ❤️</h2>
             <p class="lead measure-lead mx-auto text-70">Отмечайте понравившиеся университеты и следите за новостями!</p>
         </div>
-        
+        @{
+            if (!User.Identity.IsAuthenticated)
+            {
+                <div class="d-flex justify-content-center flex-column align-items-center">
+                    <h5 class="text-center">Вы не вошли в систему, и мы ничего не нашли! 😭</h5>
+                    <a asp-action="Login" asp-controller="Applicant" class="btn  btn-accent-electric-violet" style="max-width: 300px">Войти в Университеты России</a>
+                </div>
+            }
+            else
+            {
+                
+                
+                <div class="row row-cols-3">
+                    @{
+                        var id = int.Parse(User.FindFirst(ClaimTypes.Sid)?.Value);
+                        var user = DatabaseController.GetInstance().Applicants.FirstOrDefault(x => x.Id == id);
+
+                        if (user!= null )
+                        {
+                            if (user.FavoriteUniversities != null && user.FavoriteUniversities.Count != 0)
+                            {
+                                foreach (var uni in user.FavoriteUniversities.Select(ids => DatabaseController.GetInstance().Universities.FirstOrDefault(x => x.Id == ids)))
+                                {
+                                    @await Html.PartialAsync("Partial/HomeUniversityCard", uni)
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+                </div>
+            }
+        }
     </div>
 </div>

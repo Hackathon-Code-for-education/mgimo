@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UniWeb.Database;
+using UniWeb.Entities.Entity.Entity.University;
 
 namespace UniWeb.Controllers;
 
@@ -11,13 +14,19 @@ public class UniversitiesController : Controller
         _logger = logger;
     }
 
+    [AllowAnonymous]
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
 
+    [AllowAnonymous]
+    [HttpGet]
     public IActionResult Details(int id)
     {
-        return View();
+        var university = DatabaseController.GetInstance().Universities.FirstOrDefault(x => x.Id == id);
+        
+        return View(university);
     }
 }

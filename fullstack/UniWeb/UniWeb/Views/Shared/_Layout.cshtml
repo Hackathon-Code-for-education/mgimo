@@ -5,156 +5,151 @@
       dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Университеты России</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Университеты России</title>
 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <!-- Material Design Icons -->
-    <link type="text/css"
-          href="~/public/css/material-icons.css"
-          rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
-    <link type="text/css"
-          href="~/public/css/fontawesome.css"
-          rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-   
-    <!-- App CSS -->
-    <link type="text/css"
-          href="~/public/css/app.css"
-          rel="stylesheet">
+      <!-- App CSS -->
+      <link type="text/css"
+            href="~/public/css/app.css"
+            rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/49dfa5884e.js" crossorigin="anonymous"></script>
+      <link href="~/icons/css/fontawesome.css" rel="stylesheet" />
+      <link href="~/icons/css/brands.css" rel="stylesheet" />
+      <link href="~/icons/css/solid.css" rel="stylesheet" />
 
-    <link type="text/css"
-          href="~/css/site.css"
-          rel="stylesheet">
-    
-    <style>
-        *{
-            font-family: "Noto Sans", sans-serif !important;
-            font-optical-sizing: auto !important;
-            font-style: normal !important;
-            font-size: 14px;
-        }
-    </style>
+      <link type="text/css"
+            href="~/css/site.css"
+            rel="stylesheet">
+
+      <style>
+            *{
+                  font-family: "Noto Sans", sans-serif ;
+                  font-size: 14px;
+            }
+      </style>
 </head>
 
 <body class="layout-app">
 
 <!-- Предварительный загрузчик-->
 <div class="preloader">
-    <div class="sk-chase">
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-        <div class="sk-chase-dot"></div>
-    </div>
+      <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+      </div>
 </div>
 
 <!-- Drawer Layout -->
-<div class="mdk-drawer-layout js-mdk-drawer-layout"
-     data-push
-     data-responsive-width="992px">
-    <div class="mdk-drawer-layout__content page-content">
-        <!-- Header -->
-        <header class="navbar navbar-expand container navbar-light border-bottom-2"
-             id="default-navbar"
-             data-primary>
+<div class="">
+      <div class="">
+            <!-- Header -->
+            <header class="border-bottom-2 container-xl" style="display: flex !important; justify-content: space-between; align-items: center"
+                    id="default-navbar">
+                  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="d-flex">
+                              <a class="text-40 brand mr-4" style="font-size: 1rem!important;" asp-action="Index" asp-controller="Home">
+                                    <img class="brand-icon"
+                                         src="~/public/images/logo/black-70@2x.png"
+                                         width="30"
+                                         alt="Luma"> Университеты России
+                              </a>
 
-            <ul class="nav navbar-nav d-none d-sm-flex flex justify-content-start ml-8pt">
-                <li class="nav-item">
-                    <a asp-action="Index" asp-controller="Home"
-                       class="nav-link">Главная</a>
-                </li>
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                          <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" asp-action="Index" asp-controller="Home">Главная</a>
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" asp-action="Index" asp-controller="Universities">Университеты</a>
+                                          </li>
 
-                <li class="nav-item">
-                    <a asp-action="Index" asp-controller="Universities"
-                       class="nav-link">Университеты</a>
-                </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link">Блог</a>
+                                          </li>
 
-                <li class="nav-item">
-                    <a href="index.html"
-                       class="nav-link">Блог</a>
-                </li>
+                                          <li class="nav-item">
+                                                <a asp-action="Register" asp-controller="Applicant"
+                                                   class="btn btn-accent-electric-violet">Подберите мне ВУЗ!</a>
+                                          </li>
+                                    </ul>
+                              </div>
+                        </div>
 
-                <li class="nav-item">
-                    <a href="signup.html"
-                       class="btn btn-primary">Подбери мне ВУЗ!</a>
-                </li>
+                  </nav>
 
-            </ul>
-
-            @{
-                if (!User.Identity.IsAuthenticated)
-                {
-                    <ul class="nav navbar-nav ml-auto mr-0">
+                  @{
+                  if (!User.Identity.IsAuthenticated)
+                  {
+                  <ul class="d-flex nav">
                         <li class="nav-item">
-                            <a asp-action="Login" asp-controller="Applicant"
-                               class="nav-link">Войти</a>
+                              <a asp-action="Login" asp-controller="Applicant"
+                                 class="nav-link">Войти</a>
                         </li>
 
                         <li class="nav-item">
-                            <a asp-action="Register" asp-controller="Applicant"
-                               class="btn btn-outline-dark">Зарегистрироваться</a>
+                              <a asp-action="Register" asp-controller="Applicant"
+                                 class="btn btn-outline-dark">Зарегистрироваться</a>
                         </li>
-                    </ul>
-                }
-                else
-                {
-                    <ul class="nav navbar-nav ml-auto mr-0">
+                  </ul>
+                  }
+                  else
+                  {
+                  <ul class="nav navbar-nav d-flex ml-auto mr-0">
                         <li class="nav-item">
-                            <a asp-action="About" asp-controller="Applicant"
-                               class="nav-link">@User.FindFirst(ClaimTypes.Email)?.Value</a>
+                              <a asp-action="About" asp-controller="Applicant"
+                                 class="nav-link">@User.FindFirst(ClaimTypes.Email)?.Value</a>
                         </li>
 
                         <li class="nav-item">
-                            <a asp-action="Logout" asp-controller="Applicant"
-                               class="btn btn-outline-dark">Выйти</a>
+                              <a asp-action="Logout" asp-controller="Applicant"
+                                 class="btn btn-outline-dark">Выйти</a>
                         </li>
-                    </ul>
-                }
-            }
-            
-            
-        </header>
-        
-        <!-- Main Content -->
-        
-        <main>
-            @RenderBody()
-        </main>
-        
+                  </ul>
+                  }
+                  }
+            </header>
 
-        <div class="bg-white border-top-2 mt-auto">
-            <div class="container page__container page-section d-flex flex-column">
-                <p class="text-70 brand mb-24pt">
-                    <img class="brand-icon"
-                         src="~/public/images/logo/black-70@2x.png"
-                         width="30"
-                         alt="Luma"> Университеты России
-                </p>
-                <p class="measure-lead-max text-50 small mr-8pt">Университеты России — это уникальный сервис, который помогает абитуриентам и их родителям сделать правильный выбор университета. Наш сайт предоставляет исчерпывающую информацию о различных вузах, их требованиях к абитуриентам, стоимости обучения, условиях проживания и многом другом.</p>
-                <p class="mb-8pt d-flex">
-                    <a href=""
-                       class="text-70 text-underline mr-8pt small">Правила</a>
-                    <a href=""
-                       class="text-70 text-underline small">Политика конфиденциальности</a>
-                </p>
-                <p class="text-50 small mt-n1 mb-0">Hackyright ODIN &copy; All rights reserved.</p>
+            <!-- Main Content -->
+
+            <main style="min-height: 70vh">
+                  @RenderBody()
+            </main>
+
+
+            <div class="bg-white border-top-2 mt-auto">
+                  <div class="container page__container page-section d-flex flex-column">
+                        <p class="text-70 brand mb-24pt">
+                              <img class="brand-icon"
+                                   src="~/public/images/logo/black-70@2x.png"
+                                   width="30"
+                                   alt="Luma"> Университеты России
+                        </p>
+                        <p class="measure-lead-max text-50 small mr-8pt">Университеты России — это уникальный сервис, который помогает абитуриентам и их родителям сделать правильный выбор университета. Наш сайт предоставляет исчерпывающую информацию о различных вузах, их требованиях к абитуриентам, стоимости обучения, условиях проживания и многом другом.</p>
+                        <p class="mb-8pt d-flex">
+                              <a href=""
+                                 class="text-70 text-underline mr-8pt small">Правила</a>
+                              <a href=""
+                                 class="text-70 text-underline small">Политика конфиденциальности</a>
+                        </p>
+                        <p class="text-50 small mt-n1 mb-0">Hackyright ODIN &copy; All rights reserved.</p>
+                  </div>
             </div>
-        </div>
-        
-    </div>
+
+      </div>
 </div>
 
 
@@ -162,15 +157,9 @@
 
 <script src="~/public/vendor/jquery.min.js"></script>
 
-
-<script src="~/public/vendor/bootstrap.min.js"></script>
-
-<!-- Perfect Scrollbar -->
-<script src="~/public/vendor/perfect-scrollbar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
-<!-- Preloader -->
-<script src="~/public/js/preloader.js"></script>
 
 </body>
 
