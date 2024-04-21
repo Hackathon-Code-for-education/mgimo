@@ -1,8 +1,11 @@
-@model dynamic
+@model String
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
-<h2>Ваш аккаунт находится на подтверждении. Как только мы подтвердим, вы получите сообщение на почту</h2>
+<div class="container text-center mt-lg-5">
+    <h4>@Model</h4>
+    <a asp-action="Index" class="btn btn-accent-pickled-bluewood mt-32pt" asp-controller="Home">Вернуться на главную</a>
+</div>

@@ -39,6 +39,10 @@ public class DatabaseController : DbContext
     /// </summary>
     public DbSet<Student> Students { get; set; }
 
+    /// <summary>
+    /// Все отзывы об университетах
+    /// </summary>
+    public DbSet<UniversityReview> UniversityReviews { get; set; }
     
     #endregion
     
@@ -89,6 +93,7 @@ public class DatabaseController : DbContext
             x.Property(y => y.FavoriteUniversities).HasConversion(x => JsonConvert.SerializeObject(x), // to converter
                 x => JsonConvert.DeserializeObject<List<int>>(x));
         });
+        
     }
     
     #endregion

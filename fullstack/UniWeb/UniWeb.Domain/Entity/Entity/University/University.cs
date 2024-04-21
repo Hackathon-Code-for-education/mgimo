@@ -52,4 +52,10 @@ public class University
     /// Название изображение, которое используется для отображения 
     /// </summary>
     public string? PreviewImageName { get; set; }
+    
+    /// <summary>
+    /// Домен для почты
+    /// </summary>
+    public string? EmailDomain { get; set; }
+    
 }

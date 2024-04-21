@@ -1,8 +1,11 @@
+using System.Runtime.InteropServices.JavaScript;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UniWeb.Core.Helpers;
+using UniWeb.Core.Services.Email;
 using UniWeb.Database;
 using UniWeb.Entities.Entity.Entity;
 using UniWeb.Entities.WebModels.Student;
@@ -30,11 +33,17 @@ public class StudentController : Controller
         if (ModelState.IsValid)
         {
             var user = DatabaseController.GetInstance().Students
-                .FirstOrDefault(x => x.Login == model.Email && x.Password == Sha256Helper.ToHash(model.Password));
-
+                .FirstOrDefault(x => x.Login == model.Email);
+            
             if (user == null)
             {
                 ModelState.AddModelError(string.Empty, "Неверный логин или пароль");
+                return View(model);
+            }
+            
+            if (user.Password != Sha256Helper.ToHash(model.Password))
+            {
+                ModelState.AddModelError(string.Empty, "Неверный пароль");
                 return View(model);
             }
             
@@ -103,7 +112,16 @@ public class StudentController : Controller
                 return View(model);
             }
 
+            // Проверяем почту на наличие ее в базе данных
+            var mailDomain = model.Email.Split("@");
+            if (!DatabaseController.GetInstance().Universities.Any(x => x.EmailDomain == mailDomain[1]))
+            {
+                ModelState.AddModelError(string.Empty, "Данная почта не является студенческой и не относится ни к одному университету");
+                return View(model);
+            }
+
             // TODO Добавить поля имя и фамилия в таблице для обширной инфоримации о пользователе
+            var verificationToken = Guid.NewGuid().ToString();
             var student = new Student()
             {
                 Login = model.Email,
@@ -113,8 +131,10 @@ public class StudentController : Controller
                 Course = model.Course,
                 Faculty = model.Faculty,
                 IsVerified = false,
-                VerificationCode = Sha256Helper.ToHash(Guid.NewGuid().ToString()),
-                UniversityId = int.Parse(model.UniversityId), 
+                VerificationCode = Sha256Helper.ToHash(verificationToken),
+                UniversityId = DatabaseController.GetInstance()
+                    .Universities
+                    .FirstOrDefault(x=> x.EmailDomain == mailDomain[1])?.Id, 
             };
             
             DatabaseController.GetInstance().Students.Add(student);
@@ -144,7 +164,18 @@ public class StudentController : Controller
             //     new ClaimsPrincipal(claimIdentity), authProperties);
 // 
             // Отправялем пользователя на главную страницу
-            return RedirectToAction("Index", "Home");
+
+            var emailService = new EmailServiceVerification();
+#if DEBUG
+            emailService.SendVerificationEmail(model.Email,
+                $"http://localhost:5051/student/verify?email={model.Email}&token={verificationToken}");
+#endif
+#if !DEBUG
+            emailService.SendVerificationEmail(model.Email,
+                $"https://api.mgimoapp.ru/student/verify?email={model.Email}&token={verificationToken}");
+#endif
+            
+            return RedirectToAction("Verify", "Student", new {email = model.Email});
         }
         
         ModelState.AddModelError(string.Empty, "Проверьте правильность ввода данных");
@@ -156,9 +187,46 @@ public class StudentController : Controller
 
     #region Verification
 
-    public IActionResult Verify()
+    public IActionResult Verify(string? email, string? token)
     {
-        return View();
+        try
+        {
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                var mailDomain = email.Split("@"); 
+                return View(model:new String($"На почту {email} был отправлен ссылка для подтверждения! \n\n Вам повезло, у нас есть ваш университет: {DatabaseController.GetInstance().Universities.FirstOrDefault(x=> x.EmailDomain == mailDomain[1])?.Name} \ud83e\udd29"));
+            }
+            
+            if (string.IsNullOrWhiteSpace(email) && string.IsNullOrWhiteSpace(token))
+            {
+                
+
+                return RedirectToAction("Index", "Home");
+            }
+            
+            var student = DatabaseController.GetInstance().Students.FirstOrDefault(x => x.Login == email);
+
+            
+            if (student == null)
+                return RedirectToAction("Index", "Home");
+
+            if (student.IsVerified)
+                return View(model:new String("Ваш аккаунт уже авторизирован! Вы можете пользоваться всеми услугами \ud83e\udd29"));
+            
+            
+            if (student.VerificationCode != Sha256Helper.ToHash(token))
+                return View(model:new String("Код верификации неверен! \ud83d\udeab"));
+
+            student.IsVerified = true;
+            DatabaseController.GetInstance().SaveChanges();
+            
+            return View(model:new String("Вы успешно верифицировали аккаунт! \ud83e\udd29"));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return RedirectToAction("Index", "Home");
+        }
     }
 
     #endregion

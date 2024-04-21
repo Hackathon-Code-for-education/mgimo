@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Controllers\Representer\" />
       <Folder Include="Models\" />
       <Folder Include="wwwroot\icons\" />
       <Folder Include="wwwroot\public\panorama\" />

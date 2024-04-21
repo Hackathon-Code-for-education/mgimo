@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label class="form-label" for="name">Корпоративный адрес электронной почты</label>
                 <input id="name" type="email" class="form-control" asp-for="Email" placeholder="me@@msu.ru">
-                <small style="color: gray">В обязательном порядке необходимо ввести корпоративный адрес</small>
+                <small style="color: gray">В обязательном порядке необходимо ввести корпоративный адрес. Есть уже верифицированный аккаунт в базе: a.musin@@my.mgimo.ru pass: admin</small>
             </div>
 
             <div class="form-group">
@@ -45,20 +45,7 @@
                 <input id="" type="text" class="form-control" asp-for="TelegramUserName" placeholder="@@meintelegram">
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="">Выберите свой университет из списка</label>
-                <select class="form-select" aria-label="" asp-for="UniversityId">
-                    @{
-                        var universities = DatabaseController.GetInstance().Universities.ToList();
-
-                        foreach (var uni in universities)
-                        {
-                            <option value="@uni.Id">@uni.Name</option>
-                        }
-                    }
-
-                </select>
-            </div>
+            
 
             <div class="form-group">
                 <label class="form-label" for="">Введите номер своего студенческого</label>

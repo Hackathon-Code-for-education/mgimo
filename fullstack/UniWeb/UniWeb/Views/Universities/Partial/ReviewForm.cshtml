@@ -1,0 +1,56 @@
+
+
+<div class="container">
+    <h4 class="mt-5 mb-4">Оставить отзыв о своем университете</h4>
+
+    <div class="col-md-9 p-3" style="background-color: var(--light); border-radius: 10px">
+        <h6>Как вы оцениваете университет?</h6>
+        <div class="rating mb-3">
+            <style>
+                .rating__item__my__review{
+                    color: gray;
+                }
+                .active-rating{
+                    color: gold;
+                }
+            </style>
+            
+            <!-- Ребят, по братски, я ничего другого быстрого не придумал :( и времени мало. Артём :) -->
+            <select class="form-select" id="form-select-1"  >
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>чц
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+        </div>
+        <h6>Распишите подробно о своей студенческой жизни</h6>
+        <textarea class="form-control" id="text-area" rows="3" ></textarea>
+        <button type="button" onclick="sendReview()" class="btn btn-success mt-4">Отправить отзыв</button>
+        <script>
+            const sendReview = () => {
+                const formdata = new FormData();
+                formdata.append("Stars", document.getElementById("form-select-1").value);
+                formdata.append("Text", document.getElementById("text-area").value);
+
+                const requestOptions = {
+                    method: "POST",
+                    body: formdata,
+                    redirect: "follow"
+                };
+                
+                // fetch("http://localhost:5051/universities/AddReview", requestOptions)
+                //     .then((response) => response.text())
+                //     .then((result) => {
+                //         if (result.code === 200){
+                //             location.href = "https://api.mgimoapp.ru/universities/"
+                //         }
+                //         else{
+                //             console.log(result);
+                //         }
+                //     })
+                //     .catch((error) => console.error(error));
+            }
+        </script>
+    </div>
+</div>
